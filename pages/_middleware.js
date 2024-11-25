@@ -1,9 +1,8 @@
-// pages/_middleware.js
 import connectMongo from '../lib/mongoose';
 import Visitor from '../models/Visitor';
 import Request from '../models/Request';
 
-export async function middleware(req) {
+export default async function middleware(req) {
   await connectMongo();
 
   const path = req.nextUrl.pathname;
